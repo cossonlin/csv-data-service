@@ -1,0 +1,423 @@
+{
+  "info": {
+    "_postman_id": "16ba222f-6361-460a-b755-5631f0b42185",
+    "name": "csv-data-service",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "upload csv",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "file",
+              "type": "file",
+              "src": ""
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:8080/csvdata/file",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "csvdata",
+            "file"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "task query",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:8080/task/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "task",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "find all",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Page-Size",
+            "value": "100",
+            "type": "text",
+            "disabled": true
+          },
+          {
+            "key": "Page-Number",
+            "value": "0",
+            "type": "text",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:8080/csvdata/data/search",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "csvdata",
+            "data",
+            "search"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "search data by country",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Page-Size",
+            "value": "100",
+            "type": "text"
+          },
+          {
+            "key": "Page-Number",
+            "value": "0",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:8080/csvdata/data/search?country=France&sort=quantity,desc",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "csvdata",
+            "data",
+            "search"
+          ],
+          "query": [
+            {
+              "key": "country",
+              "value": "France"
+            },
+            {
+              "key": "sort",
+              "value": "quantity,desc"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "search by country and invoice date",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Page-Size",
+            "value": "100",
+            "type": "text"
+          },
+          {
+            "key": "Page-Number",
+            "value": "0",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:8080/csvdata/data/search?country=France&invoiceDateMin=2011-08-11T14:00:00&invoiceDateMax=2011-08-12T14:00:00",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "csvdata",
+            "data",
+            "search"
+          ],
+          "query": [
+            {
+              "key": "country",
+              "value": "France"
+            },
+            {
+              "key": "invoiceDateMin",
+              "value": "2011-08-11T14:00:00"
+            },
+            {
+              "key": "invoiceDateMax",
+              "value": "2011-08-12T14:00:00"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "search by timestamp",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Page-Size",
+            "value": "100",
+            "type": "text"
+          },
+          {
+            "key": "Page-Number",
+            "value": "0",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:8080/csvdata/data/search?invoiceDateMin=2011-08-11T14:00:00&invoiceDateMax=2011-08-12T14:00:00",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "csvdata",
+            "data",
+            "search"
+          ],
+          "query": [
+            {
+              "key": "invoiceDateMin",
+              "value": "2011-08-11T14:00:00"
+            },
+            {
+              "key": "invoiceDateMax",
+              "value": "2011-08-12T14:00:00"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "search by unit price",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Page-Size",
+            "value": "100",
+            "type": "text"
+          },
+          {
+            "key": "Page-Number",
+            "value": "0",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:8080/csvdata/data/search?unitPriceMin=9.55",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "csvdata",
+            "data",
+            "search"
+          ],
+          "query": [
+            {
+              "key": "unitPriceMin",
+              "value": "9.55"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "search by unit price range",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Page-Size",
+            "value": "100",
+            "type": "text"
+          },
+          {
+            "key": "Page-Number",
+            "value": "0",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:8080/csvdata/data/search?unitPriceLow=10&unitPriceHigh=10.05",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "csvdata",
+            "data",
+            "search"
+          ],
+          "query": [
+            {
+              "key": "unitPriceLow",
+              "value": "10"
+            },
+            {
+              "key": "unitPriceHigh",
+              "value": "10.05"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "search by quantity",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Page-Size",
+            "value": "100",
+            "type": "text"
+          },
+          {
+            "key": "Page-Number",
+            "value": "0",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:8080/csvdata/data/search?quantityMin=64&quantityMax=64",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "csvdata",
+            "data",
+            "search"
+          ],
+          "query": [
+            {
+              "key": "quantityMin",
+              "value": "64"
+            },
+            {
+              "key": "quantityMax",
+              "value": "64"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Bad request for search",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Page-Size",
+            "value": "100",
+            "type": "text"
+          },
+          {
+            "key": "Page-Number",
+            "value": "999999999999",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:8080/csvdata/data/search?country=France&sort=quantity,desc",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "csvdata",
+            "data",
+            "search"
+          ],
+          "query": [
+            {
+              "key": "country",
+              "value": "France"
+            },
+            {
+              "key": "sort",
+              "value": "quantity,desc"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
