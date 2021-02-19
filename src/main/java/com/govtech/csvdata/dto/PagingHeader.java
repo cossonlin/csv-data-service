@@ -12,5 +12,5 @@ public enum PagingHeader {
 	PAGE_TOTAL("Page-Total"),
 	COUNT("Count");
 
-	private final String value;
+	public final String value;
 }

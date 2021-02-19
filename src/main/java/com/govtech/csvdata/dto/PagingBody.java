@@ -10,15 +10,65 @@ import java.util.List;
 @Builder
 public class PagingBody {
 
-	private Long count;
+	public Long count;
 
-	private Long pageNumber;
+	public Long pageNumber;
 
-	private Long pageSize;
+	public Long pageSize;
 
-	private Long pageOffset;
+	public Long pageOffset;
 
-	private Long pageTotal;
+	public Long pageTotal;
 
-	private List<Invoice> elements;
+	public List<Invoice> elements;
+
+	public static PagingBodyBuilder builder() {
+		return new PagingBodyBuilder();
+	}
+
+	public static class PagingBodyBuilder {
+		private Long count;
+		private Long pageNumber;
+		private Long pageSize;
+		private Long pageOffset;
+		private Long pageTotal;
+		private List<Invoice> elements;
+
+		PagingBodyBuilder() {
+		}
+
+		public PagingBodyBuilder count(long count) {
+			this.count = count;
+			return this;
+		}
+
+		public PagingBodyBuilder pageNumber(long pageNumber) {
+			this.pageNumber = pageNumber;
+			return this;
+		}
+
+		public PagingBodyBuilder pageSize(long pageSize) {
+			this.pageSize = pageSize;
+			return this;
+		}
+
+		public PagingBodyBuilder pageOffset(long pageOffset) {
+			this.pageOffset = pageOffset;
+			return this;
+		}
+
+		public PagingBodyBuilder pageTotal(long pageTotal) {
+			this.pageTotal = pageTotal;
+			return this;
+		}
+
+		public PagingBodyBuilder elements(List<Invoice> elements) {
+			this.elements = elements;
+			return this;
+		}
+
+		public PagingBody build() {
+			return new PagingBody(count, pageNumber, pageSize, pageOffset, pageTotal, elements);
+		}
+	}
 }

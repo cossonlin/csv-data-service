@@ -31,7 +31,7 @@ public class DataServiceTest {
 	@BeforeEach
 	public void setUp() {
 		MockitoAnnotations.openMocks(this);
-		this.dataService = new DataService(pageSize, invoiceRepository);
+		this.dataService = new DataService(invoiceRepository);
 	}
 
 	@Test

@@ -1,22 +1,46 @@
 package com.govtech.csvdata.entity;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
 @Data
-@Builder
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
 public class Task {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	public Long id;
 
 	@Column
-	private int totalElement;
+	public int totalElement;
+
+	public static TaskBuilder builder() {
+		return new TaskBuilder();
+	}
+
+	public static class TaskBuilder {
+		private Long id;
+		private int totalElement;
+
+		public TaskBuilder() {
+		}
+
+		public TaskBuilder id(long id) {
+			this.id = id;
+			return this;
+		}
+
+		public TaskBuilder totalElement(int totalElement) {
+			this.totalElement = totalElement;
+			return this;
+		}
+
+		public Task build() {
+			return new Task(id, totalElement);
+		}
+	}
 }

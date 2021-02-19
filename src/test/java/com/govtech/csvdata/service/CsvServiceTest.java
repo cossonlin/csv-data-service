@@ -28,7 +28,7 @@ public class CsvServiceTest {
 	@BeforeEach
 	public void setUp() {
 		MockitoAnnotations.openMocks(this);
-		this.csvService = new CsvService(dateTimeFormat, taskService);
+		this.csvService = new CsvService(taskService);
 	}
 
 	@Test
